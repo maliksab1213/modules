@@ -1,0 +1,36 @@
+[
+    {
+        "threadID": "5737024089669502",
+        "shortcuts": [
+            {
+                "id": "avoQgvFoBc",
+                "input": "kaka",
+                "output": "keke"
+            },
+            {
+                "id": "EqTEeOfbGf",
+                "input": "tata",
+                "output": "yaya"
+            },
+            {
+                "id": "iaCyxKwnDk",
+                "input": "yaya",
+                "output": "mma"
+            }
+        ]
+    },
+    {
+        "threadID": "8410257905715765",
+        "shortcuts": []
+    },
+    {
+        "threadID": "5291037274298108",
+        "shortcuts": [
+            {
+                "id": "gYUyknjbzB",
+                "input": "https://youtube.com/watch?v=k-UM2U9pyaM&feature=share",
+                "output": "YE APNI MAKE PHODE ME DAL"
+            }
+        ]
+    }
+]
