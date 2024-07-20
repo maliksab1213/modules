@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "settings",
+  name: "صورة_القروب",
   version: "0.0.1",
   hasPermssion: 1,
   credits: "fk",
@@ -196,14 +196,14 @@ api.logout()
 
     adminIDs = adminIDs.map(e => e.id).some(e => e == api.getCurrentUserID());
     if (arr.length == 0) {
-        return api.sendMessage("In the group you don't exist 'Facebook users' '.", event.threadID);
+        return api.sendMessage("المستخدم غير موجود' '.", event.threadID);
     }
     else {
-        api.sendMessage("Existing group of friends" + arr.length + " 'User Facebook'.", event.threadID, function () {
+        api.sendMessage("مجموعة الأصدقاء الموجودة + arr.length + " 'User Facebook'.", event.threadID, function () {
             if (!adminIDs) {
-                api.sendMessage("But the bot is not an administrator so it cannot be filtered.", event.threadID);
+                api.sendMessage("البوت ليس ادمن.", event.threadID);
             } else {
-                api.sendMessage("Start filtering.", event.threadID, async function() {
+                api.sendMessage("بدا التصفية.", event.threadID, async function() {
                     for (const e of arr) {
                         try {
                             await new Promise(resolve => setTimeout(resolve, 1000));

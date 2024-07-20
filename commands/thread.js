@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "thread",
 	version: "1.0.5",
 	hasPermssion: 2,
-	credits: "Mirai Team",
+	credits: "fk",
 	description: "",
 	commandCategory: "system",
 	usages: "[unban/ban/search] [ID or text]",

@@ -1,7 +1,7 @@
 module.exports.config = {
-	name: "setprefix",
+	name: "الرمز",
 	version: "1.0.1",
-	hasPermssion: 2,
+	hasPermssion: 2, 3,
 	credits: "fk",
 	description: "Reset group prefix",
 	commandCategory: "Group",

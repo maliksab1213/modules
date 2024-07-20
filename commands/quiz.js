@@ -12,13 +12,14 @@ module.exports.config = {
 };
 
 module.exports.handleReaction = ({ api, event, handleReaction }) => {
-	if (!event.userID == handleReaction.author) return;
+	if (event.userID !== handleReaction.author) return;
 	let response = "";
 	if (event.reaction == "👍") response = "True"
 	else response = "False";
-	if (response == handleReaction.answer) api.sendMessage("congrats, you got the answer right xD", event.threadID);
-	else api.sendMessage("oops, you got the answer wrong :'<", event.threadID);
-	const indexOfHandle = client.handleReaction.findIndex(e => e.messageID == handleReaction.messageID);
+	const userName = global.data.userName.get(event.userID);
+	if (response == handleReaction.answer) api.sendMessage(`Congrats ${userName}, you got the answer right 🎉`, event.threadID);
+	else api.sendMessage(`Oops ${userName}, you got the answer wrong 😔 The correct answer is ${handleReaction.answer}`, event.threadID);
+	const indexOfHandle = global.client.handleReaction.findIndex(e => e.messageID == handleReaction.messageID);
 	global.client.handleReaction.splice(indexOfHandle, 1);
 	handleReaction.answerYet = 1;
 	return global.client.handleReaction.push(handleReaction);
@@ -31,7 +32,9 @@ module.exports.run = async ({  api, event, args }) => {
 	(difficulties.some(item => difficulty == item)) ? "" : difficulty = difficulties[Math.floor(Math.random() * difficulties.length)];
 	let fetch = await axios(`https://opentdb.com/api.php?amount=1&encode=url3986&type=boolean&difficulty=${difficulty}`);
 	if (!fetch.data) return api.sendMessage("Can't find the question because the server is busy", event.threadID, event.messageID);
-	return api.sendMessage(`Here is the question for you:\n        ${decodeURIComponent(fetch.data.results[0].question)}\n\n   👍: True       😢: False`, event.threadID, async (err, info) => {
+	const question = decodeURIComponent(fetch.data.results[0].question);
+	const userName = global.data.userName.get(event.userID);
+	api.sendMessage(`Here is the question for you, ${userName}:\n        ${question}\n\n   👍: True       😢: False`, event.threadID, async (err, info) => {
 		global.client.handleReaction.push({
 			name: "quiz",
 			messageID: info.messageID,

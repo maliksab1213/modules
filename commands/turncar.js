@@ -17,7 +17,7 @@ module.exports.run = async ({ api, event,args }) => {  {
     const request = global.nodemodule["request"];
 	 const { threadID, messageID, senderID, body } = event;
 	 let text = args.join(" ")
-  if (!text) return api.sendMessage('Please enter the correct format [text1 | text2 ]!', event.threadID, event.messageID);
+  if (!text) return api.sendMessage('الرجاء إدخال التنسيق الصحيح [text1 | text2 ]!', event.threadID, event.messageID);
   const length_0 = parseInt(text.length)
   const text1 = text.substr(0, text.indexOf(' | ')); 
   if (!text1) return api.sendMessage('Please enter the correct format [text1 | text2 ]!', event.threadID, event.messageID);

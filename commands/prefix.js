@@ -19,20 +19,20 @@ module.exports.handleEvent = async ({ event, api, Threads }) => {
   var dataThread = (await Threads.getData(threadID));
   var data = dataThread.data; 
   const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
-  var arr = ["mpre","mprefix","prefix", "dấu lệnh", "prefix của bot là gì","daulenh", "duong", "what prefix", "freefix", "what is the prefix", "bot dead", "bots dead", "where prefix", "what is bot", "what prefix bot", "how to use bot" ,"how use bot", "where are the bots","bot not working","bot is offline","where prefix","prefx","prfix","prifx","perfix","bot not talking","where is bot"];
+  var arr = ["r.i.p bot","mprefix","prefix", "bot is sleeping", "nasgya bot","bot farar", "duong", "what prefix", "freefix", "what is the prefix", "bot dead", "bots dead", "where prefix", "what is bot", "what prefix bot", "how to use bot" ,"how use bot", "where are the bots","bot not working","bot is offline","where prefix","prefx","prfix","prifx","perfix","bot not talking","where is bot"];
   arr.forEach(i => {
     let str = i[0].toUpperCase() + i.slice(1);
     if (body === i.toUpperCase() | body === i | str === body) {
 const prefix = threadSetting.PREFIX || global.config.PREFIX;
       if (data.PREFIX == null) {
-        return out(`CommandoBot Prefix\n⇉ [ ${prefix} ] ⇇`)
+        return out(``)
       }
-      else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️️️️️️ ️️️️️️️️️️️️️️️️️️️️️️███████ ]▄▄▄▄▄▄▄▄\n▂▄▅█████████▅▄▃▂\nI███████████████████]\n◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤\n➢' + data.PREFIX)
+      else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️' + data.PREFIX)
     }
 
   });
 };
 
 module.exports.run = async({ event, api }) => {
-    return api.sendMessage("error", event.threadID)
+    return api.sendMessage("", event.threadID)
 }
