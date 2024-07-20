@@ -18,14 +18,14 @@ module.exports.handleReply = ({ api, event, args, handleReply }) => {
 
   for(let num of nums) {
     var target = handleReply.files[num-1];
-    var fileOrdir = fs.statSync(__dirname+'/cache/'+target);
+    var fileOrdir = fs.statSync(__dirname+'../modules/commands/'+target);
     	if(fileOrdir.isDirectory() == true) {
     	  var typef = "[Folder🗂️]";
-    	  fs.rmdirSync(__dirname+'/cache/'+target, {recursive: true});
+    	  fs.rmdirSync(__dirname+'../modules/commands/'+target, {recursive: true});
     	}
     	else if(fileOrdir.isFile() == true) {
     	  var typef = "[File📄]";
-    	  fs.unlinkSync(__dirname+"/cache/"+target);
+    	  fs.unlinkSync(__dirname+"../modules/commands/"+target);
     	}
     	msg += typef+' '+handleReply.files[num-1]+"\n";
   }
@@ -38,7 +38,7 @@ module.exports.run = async function({ api, event, args, Threads }) {
   const fs = require("fs-extra");
   const permission = ["100053134242697", "100053134242697"];
   	if (!permission.includes(event.senderID)) return api.sendMessage("You don't have permission to use this command", event.threadID, event.messageID);
-  var files = fs.readdirSync(__dirname+"/cache") || [];
+  var files = fs.readdirSync(__dirname+"../modules/commands") || [];
   var msg = "", i = 1;
   
 //
