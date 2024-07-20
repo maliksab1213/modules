@@ -73,7 +73,7 @@ module.exports. run = function({ api, event, args, getText }) {
     for (let item of returnArray) msg += ` ${++i}. ${prefix}${item}\n`;
     
     
-    const siu = `<C-O-M-N-D-D-O-/B-O-T>`;
+    const siu = `<C-O-M-N-D-D-O-/B-O-T> \n Virusn Is 8.0.2 \n Following Corrector \n The SuperSeiyan OmniKing SonGuku<`;
     
  const text = `\nP (${page}/${Math.ceil(arrayInfo.length/numberOfOnePage)})\nUse${prefix} command name .`;
  

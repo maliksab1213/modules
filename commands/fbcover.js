@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "fbcover",
+  name: "fbcover3",
   version: "1.0.9",
   hasPermssion: 0,
   credits: "fk",
